@@ -1,0 +1,1058 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML — Complete Notes</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;800&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="hero-label">// Complete Reference Notes</div>
+      <h1>HTML <span>A to Z</span></h1>
+      <p>
+        Everything from document structure to semantic elements, forms, media,
+        tables, and best practices — organized for fast learning.
+      </p>
+      <nav class="toc-pill-row">
+        <a class="toc-pill" href="#basics">Basics</a>
+        <a class="toc-pill" href="#text">Text</a>
+        <a class="toc-pill" href="#links">Links & Images</a>
+        <a class="toc-pill" href="#lists">Lists</a>
+        <a class="toc-pill" href="#tables">Tables</a>
+        <a class="toc-pill" href="#forms">Forms</a>
+        <a class="toc-pill" href="#semantic">Semantic HTML</a>
+        <a class="toc-pill" href="#media">Media</a>
+        <a class="toc-pill" href="#meta">Head & Meta</a>
+        <a class="toc-pill" href="#global">Attributes</a>
+        <a class="toc-pill" href="#bestpractice">Best Practices</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- ═══════════════ 01 BASICS ═══════════════ -->
+      <section class="chapter" id="basics">
+        <div class="chapter-label">
+          <span class="chapter-num">01</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>HTML Basics</h2>
+        <p class="chapter-desc">
+          What HTML is, how a page is structured, and how tags work.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">What is HTML?</div>
+            <p>
+              HTML (HyperText Markup Language) is the standard markup language
+              for creating web pages. It describes the <em>structure</em> and
+              <em>content</em> of web documents using <strong>elements</strong>.
+              Browsers read HTML and render it as visual pages.
+            </p>
+            <div class="callout">
+              <strong>Key idea:</strong> HTML is about
+              <em>meaning</em> (structure), not style. CSS handles looks, JS
+              handles behavior.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Anatomy of an Element</div>
+            <p>
+              An element has an opening tag, content, and a closing tag. Some
+              are self-closing.
+            </p>
+            <pre><span class="cm">&lt;!-- Normal element --&gt;</span>
+<span class="t">&lt;p&gt;</span><span class="tx">Hello, world!</span><span class="t">&lt;/p&gt;</span>
+
+<span class="cm">&lt;!-- Self-closing (void element) --&gt;</span>
+<span class="t">&lt;br</span> <span class="t">/&gt;</span>
+<span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"photo.jpg"</span> <span class="a">alt</span>=<span class="v">"A photo"</span> <span class="t">/&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">The Boilerplate</div>
+            <p>
+              The basic structure of an HTML document. Every HTML page starts
+              with this skeleton:
+            </p>
+            <pre><span class="t">&lt;!DOCTYPE html&gt;</span>
+<span class="t">&lt;html</span> <span class="a">lang</span>=<span class="v">"en"</span><span class="t">&gt;</span>
+  <span class="t">&lt;head&gt;</span>
+    <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">/&gt;</span>
+    <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span> <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">/&gt;</span>
+    <span class="t">&lt;title&gt;</span><span class="tx">Page Title</span><span class="t">&lt;/title&gt;</span>
+  <span class="t">&lt;/head&gt;</span>
+  <span class="t">&lt;body&gt;</span>
+    <span class="cm">&lt;!-- visible content here --&gt;</span>
+  <span class="t">&lt;/body&gt;</span>
+<span class="t">&lt;/html&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Essential tags</div>
+            <ul>
+              <li>
+                <strong>Block elements</strong> — start on a new line, take full
+                width: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>,
+                <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>,
+                <code>&lt;section&gt;</code>
+              </li>
+              <li>
+                <strong>Inline elements</strong> — flow within text:
+                <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
+                <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
+                <code>&lt;img&gt;</code>
+              </li>
+            </ul>
+            <div class="callout">
+              <strong>Note:</strong> CSS <code>display</code> property can
+              change any element's behavior.
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-title">Block vs Inline</div>
+            <ul>
+              <li>
+                <strong>Block elements</strong> — start on a new line, take full
+                width: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>,
+                <code>&lt;h1&gt;</code>–<code>&lt;h6&gt;</code>,
+                <code>&lt;section&gt;</code>
+              </li>
+              <li>
+                <strong>Inline elements</strong> — flow within text:
+                <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>,
+                <code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>,
+                <code>&lt;img&gt;</code>
+              </li>
+            </ul>
+            <div class="callout">
+              <strong>Note:</strong> CSS <code>display</code> property can
+              change any element's behavior.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 02 TEXT ═══════════════ -->
+      <section class="chapter" id="text">
+        <div class="chapter-label">
+          <span class="chapter-num">02</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Text Elements</h2>
+        <p class="chapter-desc">
+          Headings, paragraphs, emphasis, and inline text formatting.
+        </p>
+
+        <div class="cards two">
+          <div class="card">
+            <div class="card-title">
+              Headings <span class="tag-badge">&lt;h1&gt;–&lt;h6&gt;</span>
+            </div>
+            <p>
+              Six levels of headings. Use one <code>&lt;h1&gt;</code> per page
+              (SEO + accessibility), then h2–h6 hierarchically.
+            </p>
+            <pre><span class="t">&lt;h1&gt;</span><span class="tx">Main Title</span><span class="t">&lt;/h1&gt;</span>
+<span class="t">&lt;h2&gt;</span><span class="tx">Section</span><span class="t">&lt;/h2&gt;</span>
+<span class="t">&lt;h3&gt;</span><span class="tx">Sub-section</span><span class="t">&lt;/h3&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Paragraph <span class="tag-badge">&lt;p&gt;</span>
+            </div>
+            <p>
+              The main block for text. Browsers add top/bottom margin by
+              default.
+            </p>
+            <pre><span class="t">&lt;p&gt;</span><span class="tx">This is a paragraph of text.</span><span class="t">&lt;/p&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Emphasis & Strong</div>
+            <table>
+              <tr>
+                <th>Tag</th>
+                <th>Meaning</th>
+              </tr>
+              <tr>
+                <td>&lt;strong&gt;</td>
+                <td>Important text (bold visually)</td>
+              </tr>
+              <tr>
+                <td>&lt;em&gt;</td>
+                <td>Stressed emphasis (italic)</td>
+              </tr>
+              <tr>
+                <td>&lt;b&gt;</td>
+                <td>Bold — no semantic weight</td>
+              </tr>
+              <tr>
+                <td>&lt;i&gt;</td>
+                <td>Italic — no semantic weight</td>
+              </tr>
+              <tr>
+                <td>&lt;mark&gt;</td>
+                <td>Highlighted / relevant text</td>
+              </tr>
+              <tr>
+                <td>&lt;small&gt;</td>
+                <td>Fine print, side comments</td>
+              </tr>
+              <tr>
+                <td>&lt;del&gt;</td>
+                <td>Deleted text (strikethrough)</td>
+              </tr>
+              <tr>
+                <td>&lt;ins&gt;</td>
+                <td>Inserted text (underline)</td>
+              </tr>
+              <tr>
+                <td>&lt;sub&gt;</td>
+                <td>Subscript (H₂O)</td>
+              </tr>
+              <tr>
+                <td>&lt;sup&gt;</td>
+                <td>Superscript (x²)</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Other Text Tags</div>
+            <table>
+              <tr>
+                <th>Tag</th>
+                <th>Use</th>
+              </tr>
+              <tr>
+                <td>&lt;br&gt;</td>
+                <td>Line break (void element)</td>
+              </tr>
+              <tr>
+                <td>&lt;hr&gt;</td>
+                <td>Thematic break / divider</td>
+              </tr>
+              <tr>
+                <td>&lt;pre&gt;</td>
+                <td>Preformatted text (preserves spaces)</td>
+              </tr>
+              <tr>
+                <td>&lt;code&gt;</td>
+                <td>Inline code snippet</td>
+              </tr>
+              <tr>
+                <td>&lt;kbd&gt;</td>
+                <td>Keyboard input (Ctrl+C)</td>
+              </tr>
+              <tr>
+                <td>&lt;abbr&gt;</td>
+                <td>Abbreviation with title tooltip</td>
+              </tr>
+              <tr>
+                <td>&lt;blockquote&gt;</td>
+                <td>Long quotation from another source</td>
+              </tr>
+              <tr>
+                <td>&lt;q&gt;</td>
+                <td>Short inline quotation</td>
+              </tr>
+              <tr>
+                <td>&lt;cite&gt;</td>
+                <td>Reference to a work title</td>
+              </tr>
+              <tr>
+                <td>&lt;address&gt;</td>
+                <td>Contact information</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 03 LINKS & IMAGES ═══════════════ -->
+      <section class="chapter" id="links">
+        <div class="chapter-label">
+          <span class="chapter-num">03</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Links & Images</h2>
+        <p class="chapter-desc">Hyperlinking pages and embedding images.</p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">
+              Anchor Tag <span class="tag-badge">&lt;a&gt;</span>
+            </div>
+            <pre><span class="cm">&lt;!-- External link --&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"https://example.com"</span> <span class="a">target</span>=<span class="v">"_blank"</span> <span class="a">rel</span>=<span class="v">"noopener"</span><span class="t">&gt;</span>
+  <span class="tx">Visit Example</span>
+<span class="t">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Internal / same-page link --&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"#section2"</span><span class="t">&gt;</span><span class="tx">Jump to Section 2</span><span class="t">&lt;/a&gt;</span>
+
+<span class="cm">&lt;!-- Email & phone links --&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"mailto:hi@example.com"</span><span class="t">&gt;</span><span class="tx">Email us</span><span class="t">&lt;/a&gt;</span>
+<span class="t">&lt;a</span> <span class="a">href</span>=<span class="v">"tel:+1234567890"</span><span class="t">&gt;</span><span class="tx">Call us</span><span class="t">&lt;/a&gt;</span></pre>
+            <table>
+              <tr>
+                <th>Attribute</th>
+                <th>Purpose</th>
+              </tr>
+              <tr>
+                <td>href</td>
+                <td>Destination URL (required)</td>
+              </tr>
+              <tr>
+                <td>target</td>
+                <td>_blank = new tab, _self = same tab</td>
+              </tr>
+              <tr>
+                <td>rel</td>
+                <td>Relationship (noopener for security)</td>
+              </tr>
+              <tr>
+                <td>download</td>
+                <td>Triggers file download</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Image Tag <span class="tag-badge">&lt;img&gt;</span>
+            </div>
+            <pre><span class="t">&lt;img</span>
+  <span class="a">src</span>=<span class="v">"photo.jpg"</span>
+  <span class="a">alt</span>=<span class="v">"A mountain at sunset"</span>
+  <span class="a">width</span>=<span class="v">"600"</span>
+  <span class="a">height</span>=<span class="v">"400"</span>
+  <span class="a">loading</span>=<span class="v">"lazy"</span>
+<span class="t">/&gt;</span></pre>
+            <table>
+              <tr>
+                <th>Attribute</th>
+                <th>Notes</th>
+              </tr>
+              <tr>
+                <td>src</td>
+                <td>Path or URL to image (required)</td>
+              </tr>
+              <tr>
+                <td>alt</td>
+                <td>Text if image fails — required for a11y</td>
+              </tr>
+              <tr>
+                <td>width / height</td>
+                <td>Prevents layout shift (CLS)</td>
+              </tr>
+              <tr>
+                <td>loading</td>
+                <td>lazy = defer off-screen images</td>
+              </tr>
+            </table>
+            <div class="callout">
+              <strong>Always</strong> add a meaningful
+              <code>alt</code> attribute for screen readers. Use
+              <code>alt=""</code> for decorative images.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 04 LISTS ═══════════════ -->
+      <section class="chapter" id="lists">
+        <div class="chapter-label">
+          <span class="chapter-num">04</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Lists</h2>
+        <p class="chapter-desc">Unordered, ordered, and description lists.</p>
+
+        <div class="cards two">
+          <div class="card">
+            <div class="card-title">
+              Unordered List <span class="tag-badge">&lt;ul&gt;</span>
+            </div>
+            <p>Bullet points — for items where order doesn't matter.</p>
+            <pre><span class="t">&lt;ul&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">HTML</span><span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">CSS</span><span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">JavaScript</span><span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ul&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Ordered List <span class="tag-badge">&lt;ol&gt;</span>
+            </div>
+            <p>Numbered — for steps, rankings, sequences.</p>
+            <pre><span class="t">&lt;ol</span> <span class="a">type</span>=<span class="v">"1"</span> <span class="a">start</span>=<span class="v">"1"</span><span class="t">&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">Boil water</span><span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">Add pasta</span><span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">Cook 10 min</span><span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ol&gt;</span>
+<span class="cm">&lt;!-- type: 1, A, a, I, i --&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Description List <span class="tag-badge">&lt;dl&gt;</span>
+            </div>
+            <p>Term-definition pairs — great for glossaries and FAQs.</p>
+            <pre><span class="t">&lt;dl&gt;</span>
+  <span class="t">&lt;dt&gt;</span><span class="tx">HTML</span><span class="t">&lt;/dt&gt;</span>
+  <span class="t">&lt;dd&gt;</span><span class="tx">HyperText Markup Language</span><span class="t">&lt;/dd&gt;</span>
+  <span class="t">&lt;dt&gt;</span><span class="tx">CSS</span><span class="t">&lt;/dt&gt;</span>
+  <span class="t">&lt;dd&gt;</span><span class="tx">Cascading Style Sheets</span><span class="t">&lt;/dd&gt;</span>
+<span class="t">&lt;/dl&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Nested Lists</div>
+            <p>
+              Lists can be nested inside <code>&lt;li&gt;</code> for sub-items.
+            </p>
+            <pre><span class="t">&lt;ul&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">Frontend</span>
+    <span class="t">&lt;ul&gt;</span>
+      <span class="t">&lt;li&gt;</span><span class="tx">HTML</span><span class="t">&lt;/li&gt;</span>
+      <span class="t">&lt;li&gt;</span><span class="tx">CSS</span><span class="t">&lt;/li&gt;</span>
+    <span class="t">&lt;/ul&gt;</span>
+  <span class="t">&lt;/li&gt;</span>
+  <span class="t">&lt;li&gt;</span><span class="tx">Backend</span><span class="t">&lt;/li&gt;</span>
+<span class="t">&lt;/ul&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 05 TABLES ═══════════════ -->
+      <section class="chapter" id="tables">
+        <div class="chapter-label">
+          <span class="chapter-num">05</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Tables</h2>
+        <p class="chapter-desc">
+          Displaying tabular data — never use tables for layout!
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Full Table Structure</div>
+            <pre><span class="t">&lt;table&gt;</span>
+  <span class="t">&lt;caption&gt;</span><span class="tx">Student Grades</span><span class="t">&lt;/caption&gt;</span>
+  <span class="t">&lt;thead&gt;</span>
+    <span class="t">&lt;tr&gt;</span>
+      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span><span class="tx">Name</span><span class="t">&lt;/th&gt;</span>
+      <span class="t">&lt;th</span> <span class="a">scope</span>=<span class="v">"col"</span><span class="t">&gt;</span><span class="tx">Score</span><span class="t">&lt;/th&gt;</span>
+    <span class="t">&lt;/tr&gt;</span>
+  <span class="t">&lt;/thead&gt;</span>
+  <span class="t">&lt;tbody&gt;</span>
+    <span class="t">&lt;tr&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">Alice</span><span class="t">&lt;/td&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">95</span><span class="t">&lt;/td&gt;</span>
+    <span class="t">&lt;/tr&gt;</span>
+    <span class="t">&lt;tr&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">Bob</span><span class="t">&lt;/td&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">88</span><span class="t">&lt;/td&gt;</span>
+    <span class="t">&lt;/tr&gt;</span>
+  <span class="t">&lt;/tbody&gt;</span>
+  <span class="t">&lt;tfoot&gt;</span>
+    <span class="t">&lt;tr&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">Average</span><span class="t">&lt;/td&gt;</span>
+      <span class="t">&lt;td&gt;</span><span class="tx">91.5</span><span class="t">&lt;/td&gt;</span>
+    <span class="t">&lt;/tr&gt;</span>
+  <span class="t">&lt;/tfoot&gt;</span>
+<span class="t">&lt;/table&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Spanning Cells</div>
+            <p>
+              Use <code>colspan</code> and <code>rowspan</code> to merge cells.
+            </p>
+            <pre><span class="cm">&lt;!-- Span across 2 columns --&gt;</span>
+<span class="t">&lt;td</span> <span class="a">colspan</span>=<span class="v">"2"</span><span class="t">&gt;</span><span class="tx">Merged cell</span><span class="t">&lt;/td&gt;</span>
+
+<span class="cm">&lt;!-- Span across 2 rows --&gt;</span>
+<span class="t">&lt;td</span> <span class="a">rowspan</span>=<span class="v">"2"</span><span class="t">&gt;</span><span class="tx">Tall cell</span><span class="t">&lt;/td&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 06 FORMS ═══════════════ -->
+      <section class="chapter" id="forms">
+        <div class="chapter-label">
+          <span class="chapter-num">06</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Forms</h2>
+        <p class="chapter-desc">
+          Collecting user input — the backbone of interactive web.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">
+              Form Structure <span class="tag-badge">&lt;form&gt;</span>
+            </div>
+            <pre><span class="t">&lt;form</span> <span class="a">action</span>=<span class="v">"/submit"</span> <span class="a">method</span>=<span class="v">"post"</span><span class="t">&gt;</span>
+  <span class="t">&lt;label</span> <span class="a">for</span>=<span class="v">"name"</span><span class="t">&gt;</span><span class="tx">Your Name</span><span class="t">&lt;/label&gt;</span>
+  <span class="t">&lt;input</span> <span class="a">type</span>=<span class="v">"text"</span> <span class="a">id</span>=<span class="v">"name"</span> <span class="a">name</span>=<span class="v">"name"</span> <span class="a">required</span><span class="t">/&gt;</span>
+  <span class="t">&lt;button</span> <span class="a">type</span>=<span class="v">"submit"</span><span class="t">&gt;</span><span class="tx">Send</span><span class="t">&lt;/button&gt;</span>
+<span class="t">&lt;/form&gt;</span></pre>
+            <div class="callout">
+              <strong>Tip:</strong> Always link
+              <code>&lt;label for="id"&gt;</code> to
+              <code>&lt;input id="..."&gt;</code> — it improves accessibility
+              and click area.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">All Input Types</div>
+            <table>
+              <tr>
+                <th>type=</th>
+                <th>What it does</th>
+              </tr>
+              <tr>
+                <td>text</td>
+                <td>Single-line text</td>
+              </tr>
+              <tr>
+                <td>email</td>
+                <td>Email with validation</td>
+              </tr>
+              <tr>
+                <td>password</td>
+                <td>Masked text</td>
+              </tr>
+              <tr>
+                <td>number</td>
+                <td>Numeric spinner</td>
+              </tr>
+              <tr>
+                <td>tel</td>
+                <td>Telephone (no validation)</td>
+              </tr>
+              <tr>
+                <td>url</td>
+                <td>URL with validation</td>
+              </tr>
+              <tr>
+                <td>date</td>
+                <td>Date picker</td>
+              </tr>
+              <tr>
+                <td>time</td>
+                <td>Time picker</td>
+              </tr>
+              <tr>
+                <td>range</td>
+                <td>Slider</td>
+              </tr>
+              <tr>
+                <td>color</td>
+                <td>Color picker</td>
+              </tr>
+              <tr>
+                <td>checkbox</td>
+                <td>Multi-select tick boxes</td>
+              </tr>
+              <tr>
+                <td>radio</td>
+                <td>Single choice from group</td>
+              </tr>
+              <tr>
+                <td>file</td>
+                <td>File upload</td>
+              </tr>
+              <tr>
+                <td>hidden</td>
+                <td>Data sent but not shown</td>
+              </tr>
+              <tr>
+                <td>submit</td>
+                <td>Submit button</td>
+              </tr>
+              <tr>
+                <td>reset</td>
+                <td>Reset all fields</td>
+              </tr>
+              <tr>
+                <td>search</td>
+                <td>Search box</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-title">More Form Elements</div>
+            <pre><span class="cm">&lt;!-- Multi-line text --&gt;</span>
+<span class="t">&lt;textarea</span> <span class="a">name</span>=<span class="v">"message"</span> <span class="a">rows</span>=<span class="v">"4"</span><span class="t">&gt;&lt;/textarea&gt;</span>
+
+<span class="cm">&lt;!-- Dropdown --&gt;</span>
+<span class="t">&lt;select</span> <span class="a">name</span>=<span class="v">"city"</span><span class="t">&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">""</span><span class="t">&gt;</span><span class="tx">Choose…</span><span class="t">&lt;/option&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"nyc"</span><span class="t">&gt;</span><span class="tx">New York</span><span class="t">&lt;/option&gt;</span>
+  <span class="t">&lt;option</span> <span class="a">value</span>=<span class="v">"lon"</span><span class="t">&gt;</span><span class="tx">London</span><span class="t">&lt;/option&gt;</span>
+<span class="t">&lt;/select&gt;</span>
+
+<span class="cm">&lt;!-- Group related fields --&gt;</span>
+<span class="t">&lt;fieldset&gt;</span>
+  <span class="t">&lt;legend&gt;</span><span class="tx">Shipping Info</span><span class="t">&lt;/legend&gt;</span>
+  <span class="cm">&lt;!-- inputs... --&gt;</span>
+<span class="t">&lt;/fieldset&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Input Attributes</div>
+            <table>
+              <tr>
+                <th>Attribute</th>
+                <th>Effect</th>
+              </tr>
+              <tr>
+                <td>required</td>
+                <td>Field must be filled</td>
+              </tr>
+              <tr>
+                <td>placeholder</td>
+                <td>Hint text inside field</td>
+              </tr>
+              <tr>
+                <td>value</td>
+                <td>Default/pre-filled value</td>
+              </tr>
+              <tr>
+                <td>disabled</td>
+                <td>Grayed out, not submitted</td>
+              </tr>
+              <tr>
+                <td>readonly</td>
+                <td>Can't edit, is submitted</td>
+              </tr>
+              <tr>
+                <td>min / max</td>
+                <td>Range for number/date</td>
+              </tr>
+              <tr>
+                <td>maxlength</td>
+                <td>Character limit</td>
+              </tr>
+              <tr>
+                <td>pattern</td>
+                <td>Regex validation</td>
+              </tr>
+              <tr>
+                <td>autocomplete</td>
+                <td>Browser autofill hint</td>
+              </tr>
+              <tr>
+                <td>autofocus</td>
+                <td>Focus on page load</td>
+              </tr>
+              <tr>
+                <td>multiple</td>
+                <td>Allow multiple values (file/email)</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 07 SEMANTIC HTML ═══════════════ -->
+      <section class="chapter" id="semantic">
+        <div class="chapter-label">
+          <span class="chapter-num">07</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Semantic HTML5</h2>
+        <p class="chapter-desc">
+          Meaningful tags that describe content — critical for SEO and
+          accessibility.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Page Layout Elements</div>
+            <pre><span class="t">&lt;header&gt;</span>  <span class="cm">← site/section header, nav, logo</span>
+<span class="t">&lt;nav&gt;</span>     <span class="cm">← navigation links</span>
+<span class="t">&lt;main&gt;</span>    <span class="cm">← primary content (one per page)</span>
+<span class="t">&lt;article&gt;</span> <span class="cm">← self-contained content (blog post)</span>
+<span class="t">&lt;section&gt;</span> <span class="cm">← thematic grouping with a heading</span>
+<span class="t">&lt;aside&gt;</span>   <span class="cm">← sidebar / tangentially related</span>
+<span class="t">&lt;footer&gt;</span>  <span class="cm">← copyright, links, contact</span></pre>
+            <div class="callout">
+              <strong>Rule of thumb:</strong> Could you replace this with a
+              <code>&lt;div&gt;</code> and lose meaning? Then use the semantic
+              tag. Could not? Use <code>&lt;div&gt;</code>.
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Semantic Inline & Content</div>
+            <table>
+              <tr>
+                <th>Tag</th>
+                <th>Meaning</th>
+              </tr>
+              <tr>
+                <td>&lt;time&gt;</td>
+                <td>Date/time with machine-readable datetime attr</td>
+              </tr>
+              <tr>
+                <td>&lt;figure&gt;</td>
+                <td>Self-contained media (image, chart, code)</td>
+              </tr>
+              <tr>
+                <td>&lt;figcaption&gt;</td>
+                <td>Caption for a &lt;figure&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;details&gt;</td>
+                <td>Expandable disclosure widget</td>
+              </tr>
+              <tr>
+                <td>&lt;summary&gt;</td>
+                <td>Visible heading for &lt;details&gt;</td>
+              </tr>
+              <tr>
+                <td>&lt;dialog&gt;</td>
+                <td>Modal or popup dialog box</td>
+              </tr>
+              <tr>
+                <td>&lt;progress&gt;</td>
+                <td>Task progress bar</td>
+              </tr>
+              <tr>
+                <td>&lt;meter&gt;</td>
+                <td>Scalar measurement within range</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Typical Page Structure</div>
+            <pre><span class="t">&lt;body&gt;</span>
+  <span class="t">&lt;header&gt;</span>
+    <span class="t">&lt;nav&gt;</span><span class="tx">…</span><span class="t">&lt;/nav&gt;</span>
+  <span class="t">&lt;/header&gt;</span>
+
+  <span class="t">&lt;main&gt;</span>
+    <span class="t">&lt;article&gt;</span>
+      <span class="t">&lt;h1&gt;</span><span class="tx">Post Title</span><span class="t">&lt;/h1&gt;</span>
+      <span class="t">&lt;section&gt;</span><span class="tx">…</span><span class="t">&lt;/section&gt;</span>
+    <span class="t">&lt;/article&gt;</span>
+    <span class="t">&lt;aside&gt;</span><span class="tx">Related links</span><span class="t">&lt;/aside&gt;</span>
+  <span class="t">&lt;/main&gt;</span>
+
+  <span class="t">&lt;footer&gt;</span><span class="tx">© 2026</span><span class="t">&lt;/footer&gt;</span>
+<span class="t">&lt;/body&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 08 MEDIA ═══════════════ -->
+      <section class="chapter" id="media">
+        <div class="chapter-label">
+          <span class="chapter-num">08</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Media Elements</h2>
+        <p class="chapter-desc">
+          Audio, video, iframes, and responsive images.
+        </p>
+
+        <div class="cards two">
+          <div class="card">
+            <div class="card-title">
+              Video <span class="tag-badge">&lt;video&gt;</span>
+            </div>
+            <pre><span class="t">&lt;video</span>
+  <span class="a">controls</span>
+  <span class="a">autoplay</span>
+  <span class="a">muted</span>
+  <span class="a">loop</span>
+  <span class="a">width</span>=<span class="v">"640"</span>
+  <span class="a">poster</span>=<span class="v">"thumb.jpg"</span>
+<span class="t">&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.mp4"</span> <span class="a">type</span>=<span class="v">"video/mp4"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"video.webm"</span> <span class="a">type</span>=<span class="v">"video/webm"</span><span class="t">/&gt;</span>
+  <span class="tx">Your browser doesn't support video.</span>
+<span class="t">&lt;/video&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Audio <span class="tag-badge">&lt;audio&gt;</span>
+            </div>
+            <pre><span class="t">&lt;audio</span> <span class="a">controls</span><span class="t">&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"track.mp3"</span> <span class="a">type</span>=<span class="v">"audio/mpeg"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">src</span>=<span class="v">"track.ogg"</span> <span class="a">type</span>=<span class="v">"audio/ogg"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/audio&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Iframe <span class="tag-badge">&lt;iframe&gt;</span>
+            </div>
+            <p>Embeds another page (YouTube, maps, etc.).</p>
+            <pre><span class="t">&lt;iframe</span>
+  <span class="a">src</span>=<span class="v">"https://www.youtube.com/embed/xyz"</span>
+  <span class="a">width</span>=<span class="v">"560"</span>
+  <span class="a">height</span>=<span class="v">"315"</span>
+  <span class="a">allowfullscreen</span>
+  <span class="a">loading</span>=<span class="v">"lazy"</span>
+  <span class="a">title</span>=<span class="v">"Tutorial video"</span>
+<span class="t">&gt;&lt;/iframe&gt;</span></pre>
+          </div>
+
+          <div class="card">
+            <div class="card-title">
+              Responsive Images <span class="tag-badge">&lt;picture&gt;</span>
+            </div>
+            <p>
+              Serve different images based on screen size or format support.
+            </p>
+            <pre><span class="t">&lt;picture&gt;</span>
+  <span class="t">&lt;source</span>
+    <span class="a">srcset</span>=<span class="v">"hero-large.webp"</span>
+    <span class="a">media</span>=<span class="v">"(min-width: 800px)"</span>
+    <span class="a">type</span>=<span class="v">"image/webp"</span>
+  <span class="t">/&gt;</span>
+  <span class="t">&lt;source</span> <span class="a">srcset</span>=<span class="v">"hero-small.jpg"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;img</span> <span class="a">src</span>=<span class="v">"hero-small.jpg"</span> <span class="a">alt</span>=<span class="v">"Hero"</span><span class="t">/&gt;</span>
+<span class="t">&lt;/picture&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 09 HEAD & META ═══════════════ -->
+      <section class="chapter" id="meta">
+        <div class="chapter-label">
+          <span class="chapter-num">09</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Head & Meta Tags</h2>
+        <p class="chapter-desc">
+          Everything that goes in <code>&lt;head&gt;</code> — invisible but
+          vital.
+        </p>
+
+        <div class="cards">
+          <div class="card">
+            <div class="card-title">Essential Head Tags</div>
+            <pre><span class="t">&lt;head&gt;</span>
+  <span class="cm">&lt;!-- Character encoding --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">charset</span>=<span class="v">"UTF-8"</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- Responsive viewport --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"viewport"</span>
+        <span class="a">content</span>=<span class="v">"width=device-width, initial-scale=1.0"</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- Page title (tab + SEO) --&gt;</span>
+  <span class="t">&lt;title&gt;</span><span class="tx">My Awesome Page</span><span class="t">&lt;/title&gt;</span>
+
+  <span class="cm">&lt;!-- SEO description --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">name</span>=<span class="v">"description"</span>
+        <span class="a">content</span>=<span class="v">"A short description for search engines."</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- Open Graph (social sharing) --&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">property</span>=<span class="v">"og:title"</span> <span class="a">content</span>=<span class="v">"Page Title"</span><span class="t">/&gt;</span>
+  <span class="t">&lt;meta</span> <span class="a">property</span>=<span class="v">"og:image"</span> <span class="a">content</span>=<span class="v">"preview.jpg"</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- Link CSS --&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"stylesheet"</span> <span class="a">href</span>=<span class="v">"styles.css"</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- Favicon --&gt;</span>
+  <span class="t">&lt;link</span> <span class="a">rel</span>=<span class="v">"icon"</span> <span class="a">href</span>=<span class="v">"favicon.ico"</span><span class="t">/&gt;</span>
+
+  <span class="cm">&lt;!-- JS (defer = load after HTML) --&gt;</span>
+  <span class="t">&lt;script</span> <span class="a">src</span>=<span class="v">"app.js"</span> <span class="a">defer</span><span class="t">&gt;&lt;/script&gt;</span>
+<span class="t">&lt;/head&gt;</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 10 GLOBAL ATTRIBUTES ═══════════════ -->
+      <section class="chapter" id="global">
+        <div class="chapter-label">
+          <span class="chapter-num">10</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Global Attributes</h2>
+        <p class="chapter-desc">These attributes work on any HTML element.</p>
+
+        <div class="cards">
+          <div class="card">
+            <table>
+              <tr>
+                <th>Attribute</th>
+                <th>Purpose</th>
+              </tr>
+              <tr>
+                <td>id</td>
+                <td>Unique identifier — used by CSS, JS, and anchor links</td>
+              </tr>
+              <tr>
+                <td>class</td>
+                <td>One or more CSS class names (space-separated)</td>
+              </tr>
+              <tr>
+                <td>style</td>
+                <td>Inline CSS — use sparingly</td>
+              </tr>
+              <tr>
+                <td>title</td>
+                <td>Tooltip on hover</td>
+              </tr>
+              <tr>
+                <td>lang</td>
+                <td>Language of element's content</td>
+              </tr>
+              <tr>
+                <td>dir</td>
+                <td>Text direction: ltr / rtl / auto</td>
+              </tr>
+              <tr>
+                <td>hidden</td>
+                <td>Hides element (like display:none)</td>
+              </tr>
+              <tr>
+                <td>tabindex</td>
+                <td>Keyboard focus order (0 = natural, -1 = skip)</td>
+              </tr>
+              <tr>
+                <td>contenteditable</td>
+                <td>Makes element directly editable</td>
+              </tr>
+              <tr>
+                <td>draggable</td>
+                <td>Enable HTML drag-and-drop API</td>
+              </tr>
+              <tr>
+                <td>spellcheck</td>
+                <td>Enable/disable browser spell check</td>
+              </tr>
+              <tr>
+                <td>data-*</td>
+                <td>Custom data attributes for JS hooks</td>
+              </tr>
+              <tr>
+                <td>aria-*</td>
+                <td>Accessibility roles and properties</td>
+              </tr>
+              <tr>
+                <td>role</td>
+                <td>ARIA landmark role (button, alert, …)</td>
+              </tr>
+            </table>
+            <pre
+              style="margin-top: 16px"
+            ><span class="cm">&lt;!-- data-* example --&gt;</span>
+<span class="t">&lt;button</span>
+  <span class="a">data-product-id</span>=<span class="v">"42"</span>
+  <span class="a">data-category</span>=<span class="v">"shoes"</span>
+<span class="t">&gt;</span><span class="tx">Add to cart</span><span class="t">&lt;/button&gt;</span>
+
+<span class="cm">&lt;!-- Access in JS --&gt;</span>
+<span class="tx">btn.dataset.productId  // "42"</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════ 11 BEST PRACTICES ═══════════════ -->
+      <section class="chapter" id="bestpractice">
+        <div class="chapter-label">
+          <span class="chapter-num">11</span>
+          <div class="chapter-line"></div>
+        </div>
+        <h2>Best Practices</h2>
+        <p class="chapter-desc">
+          Write HTML that's accessible, performant, and maintainable.
+        </p>
+
+        <div class="cards two">
+          <div class="card">
+            <div class="card-title">✅ Accessibility (a11y)</div>
+            <ul>
+              <li>Always include <code>alt</code> text on images</li>
+              <li>Use <code>&lt;label&gt;</code> linked to every input</li>
+              <li>Use semantic tags, not just <code>&lt;div&gt;</code></li>
+              <li>
+                Add <code>role</code> and <code>aria-*</code> where needed
+              </li>
+              <li>Ensure keyboard navigation works (tabindex)</li>
+              <li>Use sufficient color contrast in CSS</li>
+              <li>Avoid <code>autoplay</code> without <code>muted</code></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">⚡ Performance</div>
+            <ul>
+              <li>
+                Add <code>width</code>/<code>height</code> on images (prevents
+                CLS)
+              </li>
+              <li>Use <code>loading="lazy"</code> for off-screen images</li>
+              <li>
+                Put <code>&lt;script&gt;</code> at end of body or use
+                <code>defer</code>
+              </li>
+              <li>
+                Use <code>&lt;link rel="preload"&gt;</code> for critical assets
+              </li>
+              <li>Prefer WebP over JPEG/PNG for images</li>
+              <li>Minimize inline styles</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🧹 Clean Code</div>
+            <ul>
+              <li>Use lowercase for all tags and attributes</li>
+              <li>Always quote attribute values</li>
+              <li>Close all tags (even optional ones)</li>
+              <li>Indent nested elements consistently (2 spaces)</li>
+              <li>Use meaningful id/class names (BEM methodology)</li>
+              <li>Validate at <code>validator.w3.org</code></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="card-title">🔍 SEO Essentials</div>
+            <ul>
+              <li>
+                One <code>&lt;h1&gt;</code> per page — include main keyword
+              </li>
+              <li>Descriptive <code>&lt;title&gt;</code> (50–60 chars)</li>
+              <li>Meaningful <code>meta description</code> (150–160 chars)</li>
+              <li>Use semantic HTML (search engines read structure)</li>
+              <li>
+                Add <code>lang</code> attribute to <code>&lt;html&gt;</code>
+              </li>
+              <li>Use descriptive <code>alt</code> on content images</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>HTML A to Z — Complete Reference</span>
+      <span>11 chapters · ~60 elements covered</span>
+    </footer>
+  </body>
+</html>
